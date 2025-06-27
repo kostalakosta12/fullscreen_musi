@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fullscreen Image with Music</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: black;
+    }
+    .bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('1350280F-B96F-4DF9-AD8C-788101F76970.jpeg') no-repeat center center;
+      background-size: cover;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <audio id="bgmusic" autoplay loop>
+    <source src="DJ_PIČKA_X_DJ_CIGAN_X_DJ_VUČIĆ_UNKNOWN_-_FEOFILOV.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    document.addEventListener("click", function() {
+      const audio = document.getElementById("bgmusic");
+      audio.play().catch(err => {
+        console.log("Автостарт невозможен:", err);
+      });
+    });
+  </script>
+</body>
+</html>
